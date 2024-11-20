@@ -198,26 +198,26 @@
     <!-- Content -->
     <div class="utf_contact_map margin-bottom-20" align="center">
         <h3>Find the top notch Wedding Vendors near you in every category.</h3>
-        <a href="#car"><button type="button" class="button_new1 button3 border fw margin-top-10">Cars</button></a>
-        <a href="#horse"><span><button type="button"
+        <a href="#Cars"><button type="button" class="button_new1 button3 border fw margin-top-10">Cars</button></a>
+        <a href="#Horse"><span><button type="button"
                     class="button_new1 button3 border fw margin-top-10">Ghori/Horse</button></span></a>
-        <a href="#photographer"><span><button type="button"
+        <a href="#Photographer"><span><button type="button"
                     class="button_new1 button3 border fw margin-top-10">Photographer</button></span></a>
-        <a href="#decoration"><span><button type="button"
+        <a href="#Decorators"><span><button type="button"
                     class="button_new1 button3 border fw margin-top-10">Decoration</button></span></a>
-        <a href="#catering"><span><button type="button"
+        <a href="#Catering"><span><button type="button"
                     class="button_new1 button3 border fw margin-top-10">Catering</button></span></a>
-        <a href="#dj"><span><button type="button"
+        <a href="#DJ"><span><button type="button"
                     class="button_new1 button3 border fw margin-top-10">DJ</button></span></a>
-        <a href="#singer"><span><button type="button"
+        <a href="#Musician"><span><button type="button"
                     class="button_new1 button3 border fw margin-top-10">Singer/Musician</button></span></a><br>
-        <a href="#dhol"><span><button type="button" class="button_new1 button3 border fw margin-top-10">Dhol -Tasha/
+        <a href="#Banjo"><span><button type="button" class="button_new1 button3 border fw margin-top-10">Dhol -Tasha/
                     Banjo</button></span></a>
-        <a href="#mehandi"><span><button type="button"
+        <a href="#Mehndi"><span><button type="button"
                     class="button_new1 button3 border fw margin-top-10">Mehndi</button></span></a>
-        <a href="#makeup"><span><button type="button"
+        <a href="#Makeup"><span><button type="button"
                     class="button_new1 button3 border fw margin-top-10">Makeup</button></span></a>
-        <a href="#choreo"><span><button type="button"
+        <a href="#Choreographer"><span><button type="button"
                     class="button_new1 button3 border fw margin-top-10">Choreographer</button></span></a>
     </div>
     <div class="clearfix"></div>
@@ -226,7 +226,7 @@
     <div class="container">
    <form id="vendorSearchForm" action="{{ route('vendor_search_result') }}" method="get">
      <input type="hidden" name="category" id="categoryInput">
-        <div class="container1" id="car">
+        <div class="container1" id="Cars">
             <div class="image-container" align="left">
                 <img src="{{ asset('public/images/car.png') }}" alt="Image 2" class="responsive-image">
                 <div class="overlay-text">
@@ -238,7 +238,7 @@
             </div>
         </div>
         <br>
-        <div class="container1" id="horse">
+        <div class="container1" id="Horse">
             <div class="image-container" align="right">
                 <img src="{{ asset('public/images/horse.png') }}" alt="Image 2" class="responsive-image">
                 <div class="overlay-text1">
@@ -251,7 +251,7 @@
         </div>
         <br>
 
-        <div class="container1" id="photographer">
+        <div class="container1" id="Photographer">
             <div class="image-container" align="left">
                 <img src="{{ asset('public/images/photographer.png') }}" alt="Image 2" class="responsive-image">
                 <div class="overlay-text">
@@ -264,14 +264,14 @@
         </div>
 
         <br>
-        <div class="container1" id="decoration">
+        <div class="container1" id="Decorators">
             <div class="image-container" align="right">
                 <img src="{{ asset('public/images/decoration.png') }}" alt="Image 2" class="responsive-image">
                 <div class="overlay-text1">
                     <h3><b>Wedding Decoration</b></h3><br>
                     <p>Find professional decorations that symbolized a sacred structure that serves as the
                         focal point of your wedding rituals.</p>
-                    <button type="button" class="button_new button3 border fw margin-top-10" onclick="submitCategory('Decoratoration')">Find Decorators</button>
+                    <button type="button" class="button_new button3 border fw margin-top-10" onclick="submitCategory('Decorators')">Find Decorators</button>
                 </div>
 
             </div>
@@ -279,7 +279,7 @@
 
         <br>
 
-        <div class="container1" id="catering">
+        <div class="container1" id="Catering">
             <div class="image-container" align="left">
                 <img src="{{ asset('public/images/catering.png') }}" alt="Image 2" class="responsive-image">
                 <div class="overlay-text">
@@ -293,7 +293,7 @@
         </div>
 
         <br>
-        <div class="container1" id="dj">
+        <div class="container1" id="DJ">
             <div class="image-container" align="right">
                 <img src="{{ asset('public/images/dj.png') }}" alt="Image 2" class="responsive-image">
                 <div class="overlay-text1">
@@ -307,7 +307,7 @@
 
         <br>
 
-        <div class="container1" id="singer">
+        <div class="container1" id="Musician">
             <div class="image-container" align="left">
                 <img src="{{ asset('public/images/singer.png') }}" alt="Image 2" class="responsive-image">
                 <div class="overlay-text">
@@ -320,7 +320,7 @@
         </div>
 
         <br>
-        <div class="container1" id="dhol">
+        <div class="container1" id="Banjo">
             <div class="image-container" align="right">
                 <img src="{{ asset('public/images/dhol-tasha.png') }}" alt="Image 2" class="responsive-image">
                 <div class="overlay-text1">
@@ -335,7 +335,7 @@
 
         <br>
 
-        <div class="container1" id="mehandi">
+        <div class="container1" id="Mehndi">
             <div class="image-container" align="left">
                 <img src="{{ asset('public/images/mehendi.png') }}" alt="Image 2" class="responsive-image">
                 <div class="overlay-text">
@@ -348,7 +348,7 @@
         </div>
 
         <br>
-        <div class="container1" id="makeup">
+        <div class="container1" id="Makeup">
             <div class="image-container" align="right">
                 <img src="{{ asset('public/images/makeup.png') }}" alt="Image 2" class="responsive-image">
                 <div class="overlay-text1">
@@ -363,7 +363,7 @@
 
         <br>
 
-        <div class="container1" id="choreo">
+        <div class="container1" id="Choreographer">
             <div class="image-container" align="left">
                 <img src="{{ asset('public/images/choreo.png') }}" alt="Image 2" class="responsive-image">
                 <div class="overlay-text">

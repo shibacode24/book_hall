@@ -129,7 +129,7 @@
                                         <option value="Horse">Ghori/Horse</option>
                                         <option value="Photographer">Photographer</option>
                                         <option value="Decorators">Decoration</option>
-                                        <option value="Caterers">Catering</option>
+                                        <option value="Catering">Catering</option>
                                         <option value="DJ">DJ</option>
                                         <option value="Musician">Singer/Musician</option>
                                         <option value="Banjo">Dhol-Tasha/Banjo</option>

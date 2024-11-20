@@ -270,8 +270,8 @@ border-radius:10px;
                                         <option value="Cars" @if ($vendor_registration->category == 'Cars') selected @endif>Cars</option>
                                         <option value="Horse" @if ($vendor_registration->category == 'Horse') selected @endif>Ghori/Horse</option>
                                         <option value="Photographer" @if ($vendor_registration->category == 'Photographer') selected @endif>Photographer</option>
-                                        <option value="Decorators" @if ($vendor_registration->category == 'Decoration') selected @endif>Decoration</option>
-                                        <option value="Caterers" @if ($vendor_registration->category == 'Catering') selected @endif>Catering</option>
+                                        <option value="Decorators" @if ($vendor_registration->category == 'Decorators') selected @endif>Decoration</option>
+                                        <option value="Catering" @if ($vendor_registration->category == 'Catering') selected @endif>Catering</option>
                                         <option value="DJ" @if ($vendor_registration->category == 'DJ') selected @endif>DJ</option>
                                         <option value="Musician" @if ($vendor_registration->category == 'Musician') selected @endif>Singer/Musician</option>
                                         <option value="Banjo" @if ($vendor_registration->category == 'Banjo') selected @endif>Dhol-Tasha/Banjo</option>

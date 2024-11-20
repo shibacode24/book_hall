@@ -437,7 +437,8 @@
                                                             <th width="20%" style="text-align:center">Images</th>
                                                         </tr>
                                                         <tbody class="add_more_vendor">
-                                                            @if (is_array($vendor_information->vendor_name))
+                                                            @if (!is_null($vendor_information) && is_array($vendor_information->vendor_name))
+                                                            {{-- @if (is_array($vendor_information->vendor_name)) --}}
                                                         @foreach ($vendor_information->vendor_name as $vendor)
                                                             <tr style="background-color:#fff; height:30px;">
                                                                 <td style="text-align:center">{{$vendor_information->vendor_name[$loop->index]}}</td>

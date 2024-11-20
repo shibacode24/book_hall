@@ -20,6 +20,70 @@
             <i class="fa fa-file-text"><label style="margin: 7px;">View Enquiry</label> </i> </h6>
     
     </div>
+
+
+    <div class="col-md-12" style="margin-top:5px;">
+
+        <div class="panel panel-default">
+            <div class="col-md-2"></div>
+            <div class="panel-body" style="margin-top:-10px; margin-bottom:-5px;">
+                <div class="form-group">
+                    <form role="form" method="get" action="{{route('view_enquiry')}}">
+
+                        <div class="col-md-12">
+                            <div class="form-group" style="margin-top:-10px;">
+                                <div class="col-md-4" style="margin-top:15px;"></div>
+
+                            
+                                <div class="col-md-2" style="margin-top:15px;">
+                                    <label>From Date<font color="black">*</font></label>
+                                    <input type="date" placeholder=" "
+                                        class="form-control datePicker" name="from_date"
+                                        value="{{ app('request')->input('from_date') }}">
+                                </div>
+                                <div class="col-md-2" style="margin-top:15px;">
+                                    <label>To Date<font color="black">*</font></label>
+                                    <input type="date" placeholder=" "
+                                        class="form-control datePicker" name="to_date"
+                                        value="{{ app('request')->input('to_date') }}">
+                                </div>
+
+
+                                <div class="col-md-2" style="margin-top:4.7vh;"
+                                    align="left">
+
+                                    <div class="input-group" style=" margin-bottom:15px;">
+
+                                        <button 
+                                            type="submit" class="btn btn-primary">Submit </button>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-2" style="margin-top:4.7vh;"
+                                    align="left">
+
+                                    <div class="input-group" style=" margin-bottom:15px;">
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </form>
+
+
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
     <div class="col-md-12" style="overflow:scroll">
 
         <!-- START DEFAULT DATATABLE -->

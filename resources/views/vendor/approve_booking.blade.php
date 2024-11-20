@@ -4,20 +4,23 @@
     <div class="page-content-wrap">
 
         <!--    <div class="row">
-                             <div class="panel-body" style="padding:1px 5px 2px 5px;">
-                           
-                            <div class="col-md-12" style="margin-top:5px;">
-                                    <label style="color:#000; background-color:#FFCC00; width:7%; height:25px; padding-top:5px;margin-top: 1vh;" align="center"><span class=""></span> <strong>Project Entry</strong></label>
-                                       
-                                  
-                                <a href="added_project_entry.html"> <button id="on" type="button" class="btn mjks"
-                                    style="color:#FFFFFF; height:30px; width:auto;background-color: #009999;"><i
-                                        class="fa fa-plus"></i>Added Project Entry</button>
-                            </a>
-                    </div>
-                                </div>
-                           
-                             </div>-->
+                                 <div class="panel-body" style="padding:1px 5px 2px 5px;">
+                               
+                                <div class="col-md-12" style="margin-top:5px;">
+                                        <label style="color:#000; background-color:#FFCC00; width:7%; height:25px; padding-top:5px;margin-top: 1vh;" align="center"><span class=""></span> <strong>Project Entry</strong></label>
+                                           
+                                      
+                                    <a href="added_project_entry.html"> <button id="on" type="button" class="btn mjks"
+                                        style="color:#FFFFFF; height:30px; width:auto;background-color: #009999;"><i
+                                            class="fa fa-plus"></i>Added Project Entry</button>
+                                </a>
+                        </div>
+                                    </div>
+                               
+                                 </div>-->
+
+                                
+
 
         <div class="row">
             <div class="panel-body" style="padding:1px 5px 2px 5px;">
@@ -31,7 +34,7 @@
             </div>
 
         </div>
-
+       
         <div class="row">
             <div class="col-md-12" style="text-align: center;margin-top: 5px;">
                 <h6 class="panel-title"
@@ -42,17 +45,79 @@
                 </h6>
 
             </div>
-			
-						   <div class="col-md-12" style="text-align: center;margin-top: 5px;">
-			 				  <a href="{{route('add_booking')}}"> <button type="button" class="btn mjks"
-                style="color:#FFFFFF; height:30px; width:auto;background-color: #e60c0c;"><i
-                    class="fa fa-plus"></i>Add Booking</button>
-        </a>    
-			 </div>
-			
-			  
-			
-	
+
+            <div class="col-md-12" style="text-align: center;margin-top: 5px;">
+                <a href="{{ route('add_booking') }}"> <button type="button" class="btn mjks"
+                        style="color:#FFFFFF; height:30px; width:auto;background-color: #e60c0c;"><i
+                            class="fa fa-plus"></i>Add Booking</button>
+                </a>
+            </div>
+
+
+            <div class="col-md-12" style="margin-top:5px;">
+
+                <div class="panel panel-default">
+                    <div class="col-md-2"></div>
+                    <div class="panel-body" style="margin-top:-10px; margin-bottom:-5px;">
+                        <div class="form-group">
+                            <form role="form" method="get" action="{{route('approve_booking')}}">
+        
+                                <div class="col-md-12">
+                                    <div class="form-group" style="margin-top:-10px;">
+                                        <div class="col-md-4" style="margin-top:15px;"></div>
+    
+                                    
+                                        <div class="col-md-2" style="margin-top:15px;">
+                                            <label>From Date<font color="black">*</font></label>
+                                            <input type="date" placeholder=" "
+                                                class="form-control datePicker" name="from_date"
+                                                value="{{ app('request')->input('from_date') }}">
+                                        </div>
+                                        <div class="col-md-2" style="margin-top:15px;">
+                                            <label>To Date<font color="black">*</font></label>
+                                            <input type="date" placeholder=" "
+                                                class="form-control datePicker" name="to_date"
+                                                value="{{ app('request')->input('to_date') }}">
+                                        </div>
+        
+        
+                                        <div class="col-md-2" style="margin-top:4.7vh;"
+                                            align="left">
+        
+                                            <div class="input-group" style=" margin-bottom:15px;">
+        
+                                                <button 
+                                                    type="submit" class="btn btn-primary">Submit </button>
+                                            </div>
+                                        </div>
+        
+        
+                                        <div class="col-md-2" style="margin-top:4.7vh;"
+                                            align="left">
+        
+                                            <div class="input-group" style=" margin-bottom:15px;">
+        
+                                            </div>
+                                        </div>
+        
+                                    </div>
+        
+        
+                                </div>
+                            </form>
+        
+        
+        
+        
+        
+                        </div>
+                    </div>
+        
+                </div>
+            </div>
+
+
+
             <div class="col-md-12" style="overflow:scroll">
 
                 <!-- START DEFAULT DATATABLE -->
@@ -137,7 +202,7 @@
                                     @else --}}
                                     <td>
                                         <span class="remaining-{{ $approve_bookings->booking_id }}">
-                                            {{ $approve_bookings->price - $approve_bookings->advance}}
+                                            {{ $approve_bookings->price - $approve_bookings->advance }}
                                         </span>
                                     </td>
                                     {{-- @endif --}}
@@ -216,9 +281,10 @@
                                 </form>
                             </div>
                             <div class="modal-footer">
-								<button type="button" class="close2 btn btn-secondary" data-dismiss="modal" aria-label="Close">Close
+                                <button type="button" class="close2 btn btn-secondary" data-dismiss="modal"
+                                    aria-label="Close">Close
                                 </button>
-                            <!--    <button type="button" class="btn btn-secondary close2" data-bs-dismiss="modal">Close</button>-->
+                                <!--    <button type="button" class="btn btn-secondary close2" data-bs-dismiss="modal">Close</button>-->
                                 <button type="button" class="btn btn-primary" id="saveeditAdvancee">Save
                                     Advance</button>
                             </div>
@@ -315,8 +381,8 @@
                         var advance = parseFloat($('#advance-' + response.id).text());
                         var remaining = price - advance;
 
-                // Update the remaining amount in the UI
-                $('.remaining-' + response.id).text(remaining); 
+                        // Update the remaining amount in the UI
+                        $('.remaining-' + response.id).text(remaining);
                         console.log(remaining);
 
                         // Update the data-price attribute of the edit button with the new price
@@ -345,7 +411,7 @@
         //         $('#booking_id1').val(id1);
         //         $('#advance').val(advance);
 
-              
+
         //         $('#editAdvance').modal('show');
         //     });
 
@@ -376,49 +442,48 @@
         // });
 
         $(document).ready(function() {
-    $('.edit-advance').on('click', function() {
-        var id1 = $(this).data('id');
-        var advance = parseFloat($(this).data('advance'));
-      
+            $('.edit-advance').on('click', function() {
+                var id1 = $(this).data('id');
+                var advance = parseFloat($(this).data('advance'));
 
-        $('#booking_id1').val(id1);
-        $('#advance').val(advance);
 
-        // Show the modal
-        $('#editAdvance').modal('show');
-    });
+                $('#booking_id1').val(id1);
+                $('#advance').val(advance);
 
-    $('#saveeditAdvancee').on('click', function() {
-        var form = $('#editAdvanceForm');
-        var formData = form.serialize();
+                // Show the modal
+                $('#editAdvance').modal('show');
+            });
 
-        $.ajax({
-            url: '{{ route('update_advance') }}', // Update with your route
-            method: 'POST',
-            data: formData,
-            success: function(response) {
-         
-                $('#price-' + response.id).text(response.price);
-                $('#advance-' + response.id).text(response.advance);
+            $('#saveeditAdvancee').on('click', function() {
+                var form = $('#editAdvanceForm');
+                var formData = form.serialize();
 
-                var updatedAdvance = parseFloat(response.advance);
-                var price = parseFloat(response.price);
+                $.ajax({
+                    url: '{{ route('update_advance') }}', // Update with your route
+                    method: 'POST',
+                    data: formData,
+                    success: function(response) {
 
-                // Calculate the remaining amount
-                var remaining = price - updatedAdvance;
-                console.log(remaining);
-                // Update the remaining amount in the UI
-                $('.remaining-' + response.id).text(remaining); 
-                // Hide the modal
-                $('#editAdvance').modal('hide');
-            },
-            error: function(xhr, status, error) {
-                console.log(xhr.responseText);
-            }
+                        $('#price-' + response.id).text(response.price);
+                        $('#advance-' + response.id).text(response.advance);
+
+                        var updatedAdvance = parseFloat(response.advance);
+                        var price = parseFloat(response.price);
+
+                        // Calculate the remaining amount
+                        var remaining = price - updatedAdvance;
+                        console.log(remaining);
+                        // Update the remaining amount in the UI
+                        $('.remaining-' + response.id).text(remaining);
+                        // Hide the modal
+                        $('#editAdvance').modal('hide');
+                    },
+                    error: function(xhr, status, error) {
+                        console.log(xhr.responseText);
+                    }
+                });
+            });
         });
-    });
-});
-
     </script>
 
 @stop

@@ -184,26 +184,48 @@ if (isset($request->vendor_image) && !empty($request->vendor_image)) {
        return redirect()->route('add_listing')->with(['success'=>'Data Inserted Successfully']);
    }
 
-	 public function approve_booking()
+	 public function approve_booking(Request $request)
 	   {
-		$approve_booking = Booking::join('add_listing','add_listing.id','=','booking.listing_id')
-		->where('add_listing.user_id',Auth::user()->id)
-		->where('booking.status','1')
-		->leftjoin('listing_amenities','listing_amenities.id','=','booking.venue_name_id')
-		->select('booking.*','add_listing.user_id','listing_amenities.amenity','listing_amenities.venue_name','listing_amenities.capacity','add_listing.id','booking.id as booking_id')
-		->orderby('booking.date','desc')
-		->get();
+        $approve_booking = Booking::join('add_listing', 'add_listing.id', '=', 'booking.listing_id')
+        ->where('add_listing.user_id', Auth::user()->id)
+        ->where('booking.status', '1')
+        ->leftJoin('listing_amenities', 'listing_amenities.id', '=', 'booking.venue_name_id')
+        ->select(
+            'booking.*',
+            'add_listing.user_id',
+            'listing_amenities.amenity',
+            'listing_amenities.venue_name',
+            'listing_amenities.capacity',
+            'add_listing.id as listing_id',
+            'booking.id as booking_id'
+        );
+    
+    if (isset($request->from_date) && isset($request->to_date)) {
+        $approve_booking = $approve_booking->whereDate('booking.created_at', '>=', $request->from_date)
+                                           ->whereDate('booking.created_at', '<=', $request->to_date);
+    }
+    
+    $approve_booking = $approve_booking->orderBy('booking.date', 'desc')->get();
+    
+// echo json_encode($approve_booking);
+// exit();
+
 		return view('vendor.approve_booking',compact('approve_booking'));
 	   }
 
-		 public function rejected_booking()
+		 public function rejected_booking(Request $request)
 	   {
 		$rejected_booking = Booking::join('add_listing','add_listing.id','=','booking.listing_id')
 		->where('add_listing.user_id',Auth::user()->id)
 		->where('booking.status','2')
 		->leftjoin('listing_amenities','listing_amenities.id','=','booking.venue_name_id')
-		->select('booking.*','add_listing.user_id','listing_amenities.venue_name','listing_amenities.amenity','listing_amenities.capacity','listing_amenities.price','add_listing.id','booking.id as booking_id')
-			->orderby('booking.date','desc')
+		->select('booking.*','add_listing.user_id','listing_amenities.venue_name','listing_amenities.amenity','listing_amenities.capacity','listing_amenities.price','add_listing.id','booking.id as booking_id');
+        if (isset($request->from_date) && isset($request->to_date)) {
+            $rejected_booking = $rejected_booking->whereDate('booking.created_at', '>=', $request->from_date)
+                                               ->whereDate('booking.created_at', '<=', $request->to_date);
+        }
+        
+        $rejected_booking = $rejected_booking->orderby('booking.date','desc')
 		->get();
 		return view('vendor.rejected_booking',compact('rejected_booking'));
 	   }
@@ -228,14 +250,18 @@ if (isset($request->vendor_image) && !empty($request->vendor_image)) {
        return response()->json(['id' => $booking->id, 'advance' => $booking->advance,'price' => $booking->price]);
    }
 	
-   public function view_enquiry()
+   public function view_enquiry(Request $request)
    {
     $view_enquiry = Booking::join('add_listing','add_listing.id','=','booking.listing_id')
     ->where('add_listing.user_id',Auth::user()->id)
     ->where('booking.status','0')
     ->leftjoin('listing_amenities','listing_amenities.id','=','booking.venue_name_id')
-    ->select('booking.*','add_listing.user_id','listing_amenities.amenity','listing_amenities.venue_name','listing_amenities.price','listing_amenities.capacity')
-	->orderby('booking.created_at','desc')
+    ->select('booking.*','add_listing.user_id','listing_amenities.amenity','listing_amenities.venue_name','listing_amenities.price','listing_amenities.capacity');
+    if (isset($request->from_date) && isset($request->to_date)) {
+        $view_enquiry = $view_enquiry->whereDate('booking.created_at', '>=', $request->from_date)
+                                           ->whereDate('booking.created_at', '<=', $request->to_date);
+    }
+    $view_enquiry = $view_enquiry->orderby('booking.created_at','desc')
     ->get();
     // echo json_encode($view_enquiry);
     // exit();
